@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id ="st1" type="number" placeholder="so thu nhat">
+<input id="st2" type="number" placeholder="so thu hai">
+<button type="button" onclick="cong()">cong</button>
+<button type="button" onclick="tru()">tru</button>
+<h3>Result:</h3>
+<p id="result"></p>
+<script>
+    function cong() {
+        let firstnumber = +document.getElementById("st1").value;
+        let seconumber = +document.getElementById("st2").value;
+        let result = firstnumber + seconumber;
+        document.getElementById("result").innerText = result
+    }
+    function tru(){
+        let firstnumber = +document.getElementById("st1").value;
+        let seconumber = +document.getElementById("st2").value;
+        let result = firstnumber - seconumber;
+        document.getElementById("result").innerText = result
+    }
+</script>
+
+</body>
+</html>
