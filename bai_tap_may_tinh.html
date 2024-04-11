@@ -5,26 +5,48 @@
     <title>Title</title>
 </head>
 <body>
-<input id ="st1" type="number" placeholder="so thu nhat">
-<input id="st2" type="number" placeholder="so thu hai">
-<button type="button" onclick="cong()">cong</button>
-<button type="button" onclick="tru()">tru</button>
-<h3>Result:</h3>
-<p id="result"></p>
+<table>
+    <tr aria-colspan="4"><input id='print' type="text"></tr>
+    <tr>
+        <td><button type="button" onclick="clickbutton(1)">1</button></td>
+        <td><button type="button" onclick="clickbutton(2)">2</button> </td>
+        <td><button type="button" onclick="clickbutton(3)">3</button> </td>
+        <td><button type="button" onclick="clickbutton('+')">+</button> </td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="clickbutton(4)">4</button> </td>
+        <td><button type="button" onclick="clickbutton(5)">5</button> </td>
+        <td><button type="button" onclick="clickbutton(6)">6</button> </td>
+        <td><button type="button" onclick="clickbutton('-')">-</button> </td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="clickbutton(7)">7</button> </td>
+        <td><button type="button" onclick="clickbutton(8)">8</button> </td>
+        <td><button type="button" onclick="clickbutton(9)">9</button> </td>
+        <td><button type="button" onclick="clickbutton('*')">*</button> </td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="clickbutton(clean)">AC</button> </td>
+        <td><button type="button" onclick="clickbutton(0)">0</button> </td>
+        <td><button type="button" onclick="clickbutton(getResult)">=</button> </td>
+        <td><button type="button" onclick="clickbutton('/')">/</button> </td>
+    </tr>
+    <p id="ketqua"></p>
+</table>
 <script>
-    function cong() {
-        let firstnumber = +document.getElementById("st1").value;
-        let seconumber = +document.getElementById("st2").value;
-        let result = firstnumber + seconumber;
-        document.getElementById("result").innerText = result
+    function clickbutton(newValue){
+        let bieuthuc = document.getElementById('print').value;
+        bieuthuc += newValue;
+        document.getElementById('print').value= bieuthuc;
     }
-    function tru(){
-        let firstnumber = +document.getElementById("st1").value;
-        let seconumber = +document.getElementById("st2").value;
-        let result = firstnumber - seconumber;
-        document.getElementById("result").innerText = result
+    function getResult() {
+       let result = eval(bieuthuc)
+        document.getElementById('print').value = + result;
+    }
+    function clean() {
+        let clean = "";
+        document.getElementById('print').value= clean
     }
 </script>
-
 </body>
 </html>

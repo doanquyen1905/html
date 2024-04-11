@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="weight" type="number"placeholder="weight">
+<input id="height" type="number"placeholder="height">
+<button type="button" onclick="DONE()">Do</button>
+<p id="BMI"></p>
+<p id="TYPE"></p>
+<script>
+    function DONE() {
+        let weight = +document.getElementById('weight').value;
+        let height = +document.getElementById('height').value;
+        let BMI = weight / (height ^ 2)
+        document.getElementById('BMI').innerText = BMI;
+        if (BMI<18){
+            document.getElementById('TYPE').innerText= 'Underweight';
+        } else {
+            if (BMI>=18 && BMI<25){
+                document.getElementById('TYPE').innerText='Normal';
+            } else {
+                if (BMI>=25 && BMI<30) {
+                    document.getElementById('TYPE').innerText='Overweight';
+                } else {document.getElementById('TYPE').innerText= 'Obese'}
+            }
+        }
+    }
+</script>
+</body>
+</html>
